@@ -19,8 +19,11 @@ class Product extends Model
         'stock'
     ];
 
-    public function Category()
-	{
-		return $this->belongsTo(Category::class, 'category_id', 'id');
+    public function Category(){
+		return $this -> belongsTo(Category::class, 'category_id', 'id');
 	}
+
+    public function Sales(){
+        return $this -> hasMany(Sales::class, 'product_id', 'id');
+    }
 }
