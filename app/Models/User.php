@@ -3,16 +3,18 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Spatie\Permission\Traits\HasRoLes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Permission\Traits\HasRoles;
+
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasRoLes;
 
     protected $table = 'users';
 
@@ -34,4 +36,16 @@ class User extends Authenticatable
         'created_ad' => 'datetime:Y-m-d',
 		'updated_ad' => 'datetime:Y-m-d',
     ];
+
+    public function getFullNameAttribute($value){
+        return "{$this->name} {$this->last_name}";
+    }
+
+    public function setPasswordAttribute($value){
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function UserSale(){
+        return $this -> hasMany(Sale::class, 'user_product', 'id');
+    }
 }
