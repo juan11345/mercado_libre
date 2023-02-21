@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned();/**usuario cliente */
+            $table->bigInteger('customer_user_id')->unsigned();/**usuario cliente */
+            $table->bigInteger('admin_user_id')->unsigned();/**Usuario administrador */
             $table->bigInteger('product_id')->unsigned();/**producto(s) a comprar*/
             $table->date('date');
             $table->timestamps();/**create_at updated_at*/
             $table->softDeletes();/**delete_at*/
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('customer_user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('admin_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }

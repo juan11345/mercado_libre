@@ -13,7 +13,8 @@ class sale extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'user_id',
+        'customer_user_id',
+        'admin_user_id',
         'product_id'
     ];
 
@@ -21,7 +22,11 @@ class sale extends Model
         return $this -> belongsTo(Product::class, 'product', 'id');
     }
 
-    public function User(){
-        return $this -> belongsTo(Product::class, 'user_product', 'id');;
+    public function Admin(){
+        return $this -> belongsTo(User::class, 'admin_user_product', 'id');
+    }
+
+    public function Customer(){
+        return $this -> belongsTo(Product::class, 'customer_user_product', 'id');
     }
 }
