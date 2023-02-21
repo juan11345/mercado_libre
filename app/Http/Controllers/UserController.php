@@ -37,6 +37,48 @@ class UserController extends Controller
         }
     }
 
+    public function showAllUsers(){
+        $users = $this -> getAllUsers() -> original['users'];
+        return view('users.index', compact('users'));
+    }
+
+    public function showCreateUser(){
+        $user = $this -> getAllRoles() -> original['roles'];
+        return view('users.create-user', compact('roles'));
+    }
+
+    public function showEditUser(User $user){
+        $user -> load('roles');
+        $roles = $this -> getAllRoles() -> original['roles'];
+        return view('users.edit-user', compact('user','roles'));
+    }
+
     /**Editar Usuario */
+    public function updateUser(User $user, UpdateUserRequest $request){
+        try{
+            DB::beginTransaction();
+            $allRequest = $request -> all();
+            if(isset($allRequest['password'])){
+                if (!$allRequest['password']) unset($allRequest['password']);
+            }
+
+            $user -> update($request -> all());
+            $user -> syncRoles([$request -> role]);
+            DB::commit();
+
+            if ($request -> ajax()) return response() -> json(['user' => $user -> refresh()], 201);
+            return back() -> with('success', 'Usuario Editado');
+        } catch (\Throwable $th){
+            DB::rollBack();
+            throw $th;
+        }
+    }
+
+    /**eliminar usuario */
+    public function deleteUser(User $user, Request $request){
+        $user->delete();
+        if ($request->ajax()) return response() -> json(['user' => $user -> refresh()], 201);
+        return back() -> with('error', 'Usuario eliminado');
+    }
 
 }
