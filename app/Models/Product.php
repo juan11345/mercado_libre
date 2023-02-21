@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Category;
+use App\Models\sale;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -24,6 +25,6 @@ class Product extends Model
 	}
 
     public function Sales(){
-        return $this -> hasMany(Sales::class, 'product_id', 'id');
+        return $this -> hasMany(Sale::class, 'product_id', 'id');
     }
 }
