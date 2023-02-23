@@ -16,6 +16,8 @@
     },
     "dependencies": {
         "lang": "^0.1.1",
+        "lodash": "^4.17.21",
+        "sweetalert": "^2.1.2",
         "vue-select": "^4.0.0-beta.6"
     }
 }

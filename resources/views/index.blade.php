@@ -56,56 +56,43 @@
 
 <!-- Un Producto -->
 <section class="d-flex justify-content-center flex-wrap">
+    @if (count($category -> product) > 0)
+    <div class="mx-5 d-flex mt-4">
+        <h2>{{$category -> name}}</h2>
+        <a class="text-decoration-none mt-1 mb-2 mx-2" href="{{ route('categoriesview.index', ['category' => $category])}}" class="card-title text-uppercase">Ver Todos Los Productos</a>
+    </div>
+    <section class="d-flex justify-content-center flex-wrap text-center mt-4">
+        <?php $count = 0;?>
+        @foreach ($category ->product as $count => $product)}
+        @break($count == 4)
+        <div class="card mx-2 mb-5 shadow mt-3" style="width: 16rem;">
+        @if ($product -> image)
+        <img src="/storage/images/{{ $product->image }}" style="height:230px;">
+        @else
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/003/399/468/small/modern-flat-design-of-jpg-file-icon-for-web-free-vector.jpg" alt="product-image">
+        @endif
+        <div class="card-body">
+            <h4 class="card-text">{{ $product -> name}}</h4><br>
+            <p>Precio: $ {{number_format($product -> price), 2}}</p><br>
+            <div class="mt-2 d-flex justify-content-between">
+                <form action="{{route('additem')}}" method="post">
+                    @csrf
+                    <a href="{{route('getDetail',['product' => $product->id ])}}" type="submit" class="btn btn-primary d-flex justify-content-between">Detalles</a>
+                    @auth
+                    <div class="auth">
+                        <input type="hidden" name="precio_id" value="{{$product->price}}">
+                        <input type="hidden" name="producto_id" value="{{$product->id}}">
+                        <input type="submit" value="Agregar al carrito" class="btn btn-success w-100 d-flex justify-content-between mt-2">
+                    </div>
+                    @endauth
+                </form>
+            </div>
+        </div>
+        </div>
+        @endforeach
 
-
-@foreach ($categories as $category)
-	 {{--@dd($categories)--}}
-	 @if (count($category->product) > 0)
-	 <div class="mx-5  d-flex mt-4">
-	 <h2>{{ $category->name }}</h2>
-	 <a class="text-decoration-none mt-1 mb-2 mx-2" href="{{ route('categoriesview.index', ['category' => $category]) }}" class="card-title text-uppercase">
-					Ver productos todos los productos
-				</a>
-			</div>
-            <section class="d-flex justify-content-center flex-wrap text-center mt-4">
-					<?php $count = 0; ?>
-                        @foreach ($category->product as $count=>$product)
-						@break($count == 4)
-                            <div class="card mx-2 mb-5 shadow mt-3" style="width: 16rem;">
-
-                                @if ($product->image)
-                                    <img src="/storage/images/{{ $product->image }}" style="height:230px;">
-                                @else
-                                    <img src="" alt="product-image">
-                                @endif
-                                <div class="card-body">
-                                    <h4 class="card-text">{{ $product->name }}</h4> <br>
-                                    <p>Precio: $ {{number_format($product->price),2}}</p> <br>
-
-								<div class="mt-2 d-flex justify-content-between">
-								<form action="{{route('additem')}}" method="post">
-								@csrf
-								<a href="{{route('getproductdetail',['product' => $product->id ])}}" type="submit" class="btn btn-primary d-flex justify-content-between">Detalles</a>
-								@auth
-								<div class="auth">
-								<input type="hidden" name="precio_id" value="{{$product->price}}">
-									<input type="hidden" name="producto_id" value="{{$product->id}}">
-									<input type="submit" value="Agregar al carrito" class="btn btn-success w-100 d-flex justify-content-between mt-2">
-								</div>
-								@endauth
-								</form>
-
-								</div>
-
-
-                                </div>
-                            	</div>
-                        		@endforeach
-            					</section> <br>
-								@endif
-
-@endforeach
-
-
+    </section><br>
+    @endif
+    @endforeach
 </section>
 </x-app>
