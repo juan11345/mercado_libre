@@ -50,7 +50,7 @@ class CartController extends Controller
 
     public function eliminarCarrito(){
         Cart::destroy();
-        return back() -> with("succes", "Carrito Eliminado CorrectamenteS")
+        return back() -> with("succes", "Carrito Eliminado CorrectamenteS");
     }
 
 

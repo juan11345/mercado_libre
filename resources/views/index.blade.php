@@ -9,7 +9,11 @@
         <table class="table table-striped">
             @foreach (Cart::content() as $item)
             <tr>
-                <td></td>
+                <td>{{$item -> name}}</td>
+                <td>{{$item -> qty}} x {{$item -> price}}</td>
+                <td>{{number_format($item -> qty * $item -> price, 2)}}</td>
+                <td><a href="">
+                </a></td>
             </tr>
         </table>
     </div>

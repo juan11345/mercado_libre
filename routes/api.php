@@ -8,22 +8,22 @@ use App\Http\Controllers\CategoryController;
 
 /** Usuarios */
 Route::group(['prefix' => 'Users', 'controller' => UserController::class], function(){
-    Route::get('GetAll','getAllUsers');
-    Route::get('GetOne/{user}', 'getAnUser');
-    Route::post('Create', 'createUser');
-    Route::put('Update/{user}','updateUser' );
-    Route::delete('Delete/{user}','deleteUser');
+    Route::get('/GetAll','getAllUsers');
+    Route::get('/GetOne/{user}', 'getAnUser');
+    Route::post('/Create', 'createUser');
+    Route::put('/Update/{user}','updateUser' );
+    Route::delete('/Delete/{user}','deleteUser');
 });
 
 /** Categorias */
 Route::group(['prefix' => 'Categories', 'controller' => CategoryController::class], function(){
-    Route::get('GetAll', 'getAllCategories');
+    Route::get('/GetAll', 'getAllCategories');
 });
 
 /** Productos */
 Route::group(['prefix' => 'Products', 'controller' => ProductController::class], function(){
-    Route::get('GetAll', 'getallProduts');
-    Route::post('save', 'saveProduct');
+    Route::get('/GetAll', 'getallProduts');
+    Route::post('/save', 'saveProduct');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
