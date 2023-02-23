@@ -56,7 +56,7 @@ Route::group(['prefix' => 'Categories', 'middleware' => ['auth', 'role:admin'], 
     Route::get('/GetAllForDataTable','getAllCategoriesForDataTable');
 });
 
-Route::get('/',[CategoryController::class, 'showHomeWithCategories']);
+Route::get('/',[CategoryController::class, 'showHomeWhithCategories']);
 
 Route::group(['prefix' => 'CategoriesView', 'controller' => CategoryController::class], function(){
     Route::get('/','categoriesView') -> name('categoriesview.index');
