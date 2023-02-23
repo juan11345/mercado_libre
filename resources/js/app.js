@@ -4,7 +4,10 @@ import vSelect from 'vue-select';
 
 
 
-const app = createApp({});
+const app = createApp({
+    components: {
+    }
+});
 
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
