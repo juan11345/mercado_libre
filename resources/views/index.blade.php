@@ -19,7 +19,87 @@
                 </a></td>
             </tr>
             @endforeach
-            <tr><td colspan="4"><p></p></td></tr>
+            <tr><td colspan="4"><p class="text-end m-0 p-0">Subtotal COP ${{Cart::subtotal()}}</p></td></tr>
+            <tr><td colspan="4"><p class="text-end m-0 p-0">IVA 19% {{Cart::tax()}}</p></td></tr>
+            <tr><td colspan="4"><p class="text-end m-0 p-0">Total COP ${{Cart::total()}}</p></td></tr>
+            <tr><td colspan="4"><p class="text-end m-0 p-0">Subtotal COP ${{Cart::subtotal()}}</p></td></tr>
         </table>
+        <p class="text-center"><a href="/showcart" class="btn btn-outline-success btn-sm">Ver Carrito</a></p>
     </div>
+@endif
+
+<!-- Carrusel -->
+<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="/getDetail/46"><img src="" class="d-block w-100" alt="..."/></a>
+        </div>
+        <div class="carousel-item">
+            <a href="/getDetail/46"><img src="" class="d-block w-100" alt="..."/></a>
+        </div>
+        <div class="carousel-item">
+            <a href="/getDetail/46"><img src="" class="d-block w-100" alt="..."/></a>
+        </div>
+        <div class="carousel-item">
+            <a href="/getDetail/46"><img src="" class="d-block w-100" alt="..."/></a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Un Producto -->
+<section class="d-flex justify-content-center flex-wrap">
+    @foreach ($categories as $category)
+    @if(count($category -> product) > 0)
+    <div class="mx-5  d-flex mt-4">
+    <h2>{{ $category -> name }}</h2>
+    <a class="text-decoration-none mt-1 mb-2 mx-2" href="{{ route('categoriesview.index', ['category' => $category]) }}" class="card-title text-uppercase">Ver Todos Los Productos</a>
+    </div>
+    <section class="d-flex justify-content-center flex-wrap text-center mt-4">
+        <?php $count = 0; ?>
+            @foreach ($category->product as $count=>$product)
+				@break($count == 4)
+                    <div class="card mx-2 mb-5 shadow mt-3" style="width: 16rem;">
+
+                        @if ($product->image)
+                            <img src="/storage/images/{{ $product->image }}" style="height:230px;">
+                        @else
+                            <img src="" alt="product-image">
+                        @endif
+                        <div class="card-body">
+                            <h4 class="card-text">{{ $product->name }}</h4> <br>
+                                <p>Precio: $ {{number_format($product->price),2}}</p> <br>
+
+								    <div class="mt-2 d-flex justify-content-between">
+								        <form action="{{route('additem')}}" method="post">
+								        @csrf
+								            <a href="{{route('getproductdetail',['product' => $product->id ])}}" type="submit" class="btn btn-primary d-flex justify-content-between">Detalles</a>
+								        @auth
+								        <div class="auth">
+								            <input type="hidden" name="precio_id" value="{{$product->price}}">
+								        	<input type="hidden" name="producto_id" value="{{$product->id}}">
+									        <input type="submit" value="Agregar al carrito" class="btn btn-success w-100 d-flex justify-content-between mt-2">
+								        </div>
+								        @endauth
+								        </form>
+
+								    </div>
+
+
+                        </div>
+                    </div>
+                        @endforeach
+            </section> <br>
+			            @endif
+
+@endforeach
+    </section>
+</section>
 </x-app>
