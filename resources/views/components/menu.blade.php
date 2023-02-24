@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url('/')}}"><img src="data:image/jpeg;base64,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"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto"></ul>
+            <ul class="navbar-nav ms-auto">
+                @if (Cart::content() -> count())
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="/showcart">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-1">
+                            {{Cart::content() -> count()}}
+                            <span class="visually-hidden">Unread Messages</span>
+                        </span>
+                    </a>
+                </li>
+                @endauth
+                @endif
+
+                @guest
+                @if (Route::has('login'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-box-arrow-in-right me-1" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+						<path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+					</svg> Iniciar Sesion</a>
+                </li>
+                @endif
+                @if (Route::has('resgister'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-fill-add me-1" viewBox="0 0 16 16">
+						<path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+						<path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+					</svg> Registrarse</a>
+                </li>
+                @endif
+                @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+
+					<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+					@role('admin')
+                    <a class="dropdown-item" href="{{ route('users') }}"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill me-1" viewBox="0 0 16 16">
+						<path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+						</svg>Usuarios</a>
+									<!-- productos -->
+                    <a class="dropdown-item" href="{{ route('products') }}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-boxes me-2" viewBox="0 0 16 16">
+						<path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z"/>
+						</svg>Productos</a>
+
+					<a class="dropdown-item" href="{{ route('categories') }}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-boxes me-2" viewBox="0 0 16 16">
+						<path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z"/>
+					    </svg>Categoria</a>
+					@endrole
+					<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form'). submit();"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right me-1" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+						<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+						</svg> Cerrar Sesion
+                    </a>
+                    <form id="logout-from" action="{{ route('logout')}}" method="POST" class="d-one">
+                        @csrf
+                    </form>
+                    </div>
+                </li>
+
+                @endguest
+            </ul>
+        </div>
+    </div>
+</nav>
