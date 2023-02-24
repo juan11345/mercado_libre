@@ -15,9 +15,13 @@
         "vue": "^3.2.37"
     },
     "dependencies": {
+        "cart": "^1.0.4",
+        "jquery": "^3.6.3",
         "lang": "^0.1.1",
         "lodash": "^4.17.21",
+        "postcss": "^8.4.21",
         "sweetalert": "^2.1.2",
+        "sweetalert2": "^11.7.2",
         "vue-select": "^4.0.0-beta.6"
     }
 }

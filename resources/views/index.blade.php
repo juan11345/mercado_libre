@@ -89,10 +89,8 @@
             </div>
         </div>
         </div>
-        @endforeach
 
     </section><br>
-    @endif
     @endforeach
 </section>
 </x-app>
