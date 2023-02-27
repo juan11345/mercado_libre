@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -51,6 +49,7 @@
                             </div>
                         </div>
 
+
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -64,10 +63,14 @@
                                 @endif
                             </div>
                         </div>
+
+						<div class="col-md-8 offset-md-4 mt-3">
+							<p>¿No tienes cuenta?<a href="/register">  Registrate</p></a>
+						</div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@endsection
+</x-app>
